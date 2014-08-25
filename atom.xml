@@ -4,7 +4,7 @@
   <title><![CDATA[Surabaya Blackhat]]></title>
   <link href="http://blog.surabayablackhat.org/atom.xml" rel="self"/>
   <link href="http://blog.surabayablackhat.org/"/>
-  <updated>2014-08-25T13:06:38+07:00</updated>
+  <updated>2014-08-25T13:14:57+07:00</updated>
   <id>http://blog.surabayablackhat.org/</id>
   <author>
     <name><![CDATA[SurabayaBlackhat]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Arbitrary File Download &amp; File Deletion Exploit]]></title>
-    <link href="http://blog.surabayablackhat.org/article/2014/07/24/arbitrary-file-download-and-file-deletion-exploit/"/>
+    <title type="html"><![CDATA[AFDFDE]]></title>
+    <link href="http://blog.surabayablackhat.org/article/2014/07/24/AFDFDE/"/>
     <updated>2014-07-24T07:41:08+07:00</updated>
-    <id>http://blog.surabayablackhat.org/article/2014/07/24/arbitrary-file-download-and-file-deletion-exploit</id>
+    <id>http://blog.surabayablackhat.org/article/2014/07/24/AFDFDE</id>
     <content type="html"><![CDATA[<h2>Arbitrary File Download &amp; File Deletion Exploit</h2>
 
 <!-- more -->
@@ -36,7 +36,7 @@
 
 <h6><a href="http://www.surabayablackhat.org">www.surabayablackhat.org</a></h6>
 
-<h3><a href="https://github.com/SurabayaBlackhat/Arbitrary-File-Download-and-File-Deletion-Exploit">Repository on Github</a></h3>
+<h3><a href="https://github.com/SurabayaBlackhat/AFDFDE">Repository on Github</a></h3>
 ]]></content>
   </entry>
   
