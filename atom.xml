@@ -4,7 +4,7 @@
   <title><![CDATA[Surabaya Blackhat]]></title>
   <link href="http://blog.surabayablackhat.org/atom.xml" rel="self"/>
   <link href="http://blog.surabayablackhat.org/"/>
-  <updated>2014-08-25T13:05:43+07:00</updated>
+  <updated>2014-08-25T13:06:38+07:00</updated>
   <id>http://blog.surabayablackhat.org/</id>
   <author>
     <name><![CDATA[SurabayaBlackhat]]></name>
@@ -12,15 +12,6 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[Test]]></title>
-    <link href="http://blog.surabayablackhat.org/article/2014/08/25/test/"/>
-    <updated>2014-08-25T13:05:32+07:00</updated>
-    <id>http://blog.surabayablackhat.org/article/2014/08/25/test</id>
-    <content type="html"><![CDATA[
-]]></content>
-  </entry>
   
   <entry>
     <title type="html"><![CDATA[Arbitrary File Download &amp; File Deletion Exploit]]></title>
