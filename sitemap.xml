@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  <url>
+    <loc>http://blog.surabayablackhat.org/article/2014/07/24/arbitrary-file-download-and-file-deletion-exploit/</loc>
+    <lastmod>2014-07-24T07:41:08+07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.surabayablackhat.org/article/2014/07/19/surabaya-blackhat/</loc>
+    <lastmod>2014-07-19T01:12:15+07:00</lastmod>
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://blog.surabayablackhat.org/</loc>
+    <lastmod>2014-08-25T13:01:11+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://blog.surabayablackhat.org/blog/archives/</loc>
+    <lastmod>2014-08-25T13:01:11+07:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://blog.surabayablackhat.org/googlebd2c2d04219b847d.html</loc>
+    <lastmod>2014-08-16T00:28:1408123692Z</lastmod>
+    <priority>0.6</priority>
+  </url>
+  
+</urlset>
