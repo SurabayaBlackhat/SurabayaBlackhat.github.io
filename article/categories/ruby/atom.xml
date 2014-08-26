@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | Surabaya Blackhat]]></title>
+  <link href="http://blog.surabayablackhat.org/article/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://blog.surabayablackhat.org/"/>
+  <updated>2014-08-26T22:10:39+07:00</updated>
+  <id>http://blog.surabayablackhat.org/</id>
+  <author>
+    <name><![CDATA[SurabayaBlackhat]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Exploit AFDFDE for Ruby]]></title>
+    <link href="http://blog.surabayablackhat.org/article/2014/08/26/exploit-afdfde-for-ruby/"/>
+    <updated>2014-08-26T22:04:26+07:00</updated>
+    <id>http://blog.surabayablackhat.org/article/2014/08/26/exploit-afdfde-for-ruby</id>
+    <content type="html"><![CDATA[<h2>ruby-AFDFDE</h2>
+
+<p><em>read this exploit <a href="https://github.com/SurabayaBlackhat/AFDFDE">AFDFDE</a></em></p>
+
+<h4>Require</h4>
+
+<ul>
+<li><a href="https://www.ruby-lang.org/en/downloads/">ruby</a></li>
+<li><a href="https://rubygems.org/pages/download">rubygems</a></li>
+<li><a href="https://rubygems.org/gems/curb">curb</a></li>
+</ul>
+
+
+<h4>Credit</h4>
+
+<ul>
+<li><a href="https://github.com/VicoErvanda">Vico Ervanda</a></li>
+<li><a href="https://github.com/SunDi3yansyah">SunDi3yansyah</a></li>
+<li>CaFc Versace</li>
+<li>Meninbox</li>
+<li>All Staff/Member SurabayaBlackhat</li>
+</ul>
+
+
+<h4>License</h4>
+
+<p><a href="http://www.gnu.org/licenses/agpl-3.0.html">GNU Affero General Public License</a></p>
+]]></content>
+  </entry>
+  
+</feed>
