@@ -1,0 +1,2 @@
+user	: sbh
+passwd	: passwd@sbh
