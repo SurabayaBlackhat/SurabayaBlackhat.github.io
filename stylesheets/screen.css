@@ -1,5 +1,5 @@
 /*
-Syntax error: Invalid CSS after "...color:#0181eb;}": expected "}", was ""
+Syntax error: Invalid CSS after "...x;border:none;}": expected "}", was ""
         on line 21 of /home/sundi3yansyah/SurabayaBlackhat.github.io/sass/custom/_styles.scss
         from line 10 of /home/sundi3yansyah/SurabayaBlackhat.github.io/sass/screen.scss
 
@@ -59,4 +59,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Invalid CSS after \"...color:#0181eb;}\": expected \"}\", was \"\"\A         on line 21 of /home/sundi3yansyah/SurabayaBlackhat.github.io/sass/custom/_styles.scss\A         from line 10 of /home/sundi3yansyah/SurabayaBlackhat.github.io/sass/screen.scss"; }
+  content: "Syntax error: Invalid CSS after \"...x;border:none;}\": expected \"}\", was \"\"\A         on line 21 of /home/sundi3yansyah/SurabayaBlackhat.github.io/sass/custom/_styles.scss\A         from line 10 of /home/sundi3yansyah/SurabayaBlackhat.github.io/sass/screen.scss"; }
