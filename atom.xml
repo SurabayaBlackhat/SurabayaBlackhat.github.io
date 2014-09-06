@@ -4,7 +4,7 @@
   <title><![CDATA[Surabaya Blackhat]]></title>
   <link href="http://blog.surabayablackhat.org/atom.xml" rel="self"/>
   <link href="http://blog.surabayablackhat.org/"/>
-  <updated>2014-09-05T05:09:56+07:00</updated>
+  <updated>2014-09-06T17:03:24+07:00</updated>
   <id>http://blog.surabayablackhat.org/</id>
   <author>
     <name><![CDATA[SurabayaBlackhat]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Creep3r Exploit and Vulnerability Search Engine]]></title>
+    <link href="http://blog.surabayablackhat.org/article/2014/09/06/creep3r-exploit-and-vulnerability-search-engine/"/>
+    <updated>2014-09-06T17:02:37+07:00</updated>
+    <id>http://blog.surabayablackhat.org/article/2014/09/06/creep3r-exploit-and-vulnerability-search-engine</id>
+    <content type="html"><![CDATA[<!-- more -->
+
+
+<h2>&ldquo;Creep3r&rdquo; Exploit and Vulnerability Search Engine</h2>
+
+<h4><a href="http://www.surabayablackhat.org/forum/thread-3132.html">Silakan langsung klik disini untuk melihat Creep3r Exploit and Vulnerability Search Engine</a></h4>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Ecommerce Website by GSI Blind SQL Injection Discloure]]></title>
