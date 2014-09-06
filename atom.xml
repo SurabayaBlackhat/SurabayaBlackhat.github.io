@@ -4,7 +4,7 @@
   <title><![CDATA[Surabaya Blackhat]]></title>
   <link href="http://blog.surabayablackhat.org/atom.xml" rel="self"/>
   <link href="http://blog.surabayablackhat.org/"/>
-  <updated>2014-09-06T18:04:18+07:00</updated>
+  <updated>2014-09-06T18:20:49+07:00</updated>
   <id>http://blog.surabayablackhat.org/</id>
   <author>
     <name><![CDATA[SurabayaBlackhat]]></name>
@@ -592,28 +592,72 @@ Yes&hellip;this is hidden shell.</p></blockquote>
     <link href="http://blog.surabayablackhat.org/article/2014/07/24/AFDFDE/"/>
     <updated>2014-07-24T07:41:08+07:00</updated>
     <id>http://blog.surabayablackhat.org/article/2014/07/24/AFDFDE</id>
-    <content type="html"><![CDATA[<h2>Arbitrary File Download &amp; File Deletion Exploit</h2>
+    <content type="html"><![CDATA[<p><img src="http://www.surabayablackhat.org/forum/images/logo.png" alt="surabayablackhat" /></p>
 
 <!-- more -->
 
 
-<p><img src="http://www.surabayablackhat.org/forum/images/logo.png" alt="surabayablackhat" /></p>
+<h2>Details</h2>
 
-<h3>Cara Menggunakan</h3>
+<blockquote><p>The vulnerable file is <code>located</code> at <code>http://localhost/wp-content/themes/{NAME-THEME}/lib/scripts/dl-skin.php</code> In exploit code, file name in first text box should be readable on the vulnerable server, then the vulnerable code allows it to be downloaded from the server. And the second textbox accepts a directory path. If it is writeable then vulnerable code will delete its contents. An attacker can download readable files from the server and also can delete contents of writeable directories.</p></blockquote>
+
+<h2>How to Use</h2>
 
 <ul>
-<li>Cukup membaca di setiap file yang ada di atas.</li>
+<li>Cukup membaca di setiap nama file/theme yang ada di repository Arbitrary File Download &amp; File Deletion Exploit (AFDFDE).</li>
+</ul>
+
+
+<h2>Require</h2>
+
+<ul>
+<li>Browser (Google-Chrome/Chromium, Firefox, IE, etc browser)</li>
+<li>Text Editor (Notepad/++, Dreamweaver, Sublimetext, etc editor)</li>
+</ul>
+
+
+<h2>Operating System</h2>
+
+<ul>
+<li>Windows</li>
+<li>Mac</li>
+<li>Linux</li>
+</ul>
+
+
+<h2>If: Use application with Ruby CLI (ruby-AFDFDE)</h2>
+
+<ul>
+<li><a href="http://blog.surabayablackhat.org/ruby-AFDFDE/">Go to repository with ruby-AFDFDE</a></li>
+<li><a href="https://www.ruby-lang.org/en/downloads/">ruby</a></li>
+<li><a href="https://rubygems.org/pages/download">rubygems</a></li>
+<li><a href="https://rubygems.org/gems/curb">curb</a></li>
+</ul>
+
+
+<h2>List of Theme</h2>
+
+<ul>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/Awake%20Wordpress%20Theme.txt">Awake Wordpress Theme</a></li>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/Construct%20Wordpress%20Theme.txt">Construct Wordpress Theme</a></li>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/Dejavu%20Wordpress%20Theme.txt">Dejavu Wordpress Theme</a></li>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/Echelon%20Wordpress%20Theme.txt">Echelon Wordpress Theme</a></li>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/Elegance%20Wordpress%20Theme.txt">Elegance Wordpress Theme</a></li>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/Fusion%20Wordpress%20Theme.txt">Fusion Wordpress Theme</a></li>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/Infocus%20Wordpress%20Theme.txt">Infocus Wordpress Theme</a></li>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/Method%20Wordpress%20Theme.txt">Mega Stream Wordpress Theme</a></li>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/Modular%20Wordpress%20Theme.txt">Method Wordpress Theme</a></li>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/Modular%20Wordpress%20Theme.txt">Modular Wordpress Theme</a></li>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/MyRiad%20Wordpress%20Theme.txt">MyRiad Wordpress Theme</a></li>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/Oakrealty%20Wordpress%20Theme.txt">Oakrealty Wordpress Theme</a></li>
+<li><a href="https://github.com/SurabayaBlackhat/AFDFDE/blob/master/Persuasion%20Wordpress%20Theme.txt">Persuasion Wordpress Theme</a></li>
+<li>Others exploit the fund will be updated as time goes by CaFc Versace</li>
 </ul>
 
 
 <h5>Lean to Be Better</h5>
 
 <h6><a href="http://www.surabayablackhat.org">www.surabayablackhat.org</a></h6>
-
-<h3><a href="https://github.com/SurabayaBlackhat/AFDFDE">Repository on Github</a></h3>
-
-<div class="github-widget" data-repo="SurabayaBlackhat/AFDFDE"></div>
-
 ]]></content>
   </entry>
   
