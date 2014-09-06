@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Shell | Surabaya Blackhat]]></title>
   <link href="http://blog.surabayablackhat.org/article/categories/shell/atom.xml" rel="self"/>
   <link href="http://blog.surabayablackhat.org/"/>
-  <updated>2014-09-06T17:26:44+07:00</updated>
+  <updated>2014-09-06T17:45:35+07:00</updated>
   <id>http://blog.surabayablackhat.org/</id>
   <author>
     <name><![CDATA[SurabayaBlackhat]]></name>
@@ -56,6 +56,9 @@ Yes&hellip;this is hidden shell.</p></blockquote>
 <p><em>we accept suggestions for the next version of the shell. we will continue to fix the error script</em></p>
 
 <h2><a href="https://github.com/SurabayaBlackhat/sbh-shell">View Project on Github</a></h2>
+
+<div class="github-widget" data-repo="SurabayaBlackhat/sbh-shell"></div>
+
 ]]></content>
   </entry>
   
